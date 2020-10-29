@@ -18,7 +18,9 @@ import static simulacion.Primera.sumatoria;
  *
  * @author jtyhr
  */
+
 public class procesoabrir {
+    public static Double[] valores = new Double[100];
     public String abrirArchivo(File archivo){
         String documento="";
         String document="";
@@ -33,6 +35,7 @@ public class procesoabrir {
                 documento=caracter;
                 sumar = Double.parseDouble(documento);
                 sumand += sumar;
+                valores[suma] = sumar;
                 String[]info=new String[1];
                 info[0]=documento;
                 model_tabla.addRow(info);
