@@ -17,7 +17,13 @@ import static simulacion.Primera.sumatoria;
  *
  * @author jtyhr
  */
-public class calcVarianza {
+public class Media {
+    public void media(){
+        Double media;
+        media = Double.parseDouble(Primera.sumatoria.getText())/Integer.parseInt(Primera.Datos.getText());
+        String mediapo = Double.toString(media);
+        Primera.Media.setText(mediapo);
+    }
     public Double varianza(File archivo){
         String documento="";
         Double sumar,resultado = 0.0, sumatorias = 0.0;
@@ -48,14 +54,13 @@ public class calcVarianza {
                 
                 suma++;
             }
-            resultado = resultado / (suma-1);
             
-            JOptionPane.showMessageDialog(null,"El calculo de la varianza es: "+resultado);
+            resultado = resultado / (suma-1);
             
             br.close();
         
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Aun no se ha calculado la media");
+            JOptionPane.showMessageDialog(null, "Aun no se han ingresado datos");
         }
         return resultado;
     }

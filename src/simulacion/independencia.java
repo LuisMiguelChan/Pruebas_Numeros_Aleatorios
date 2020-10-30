@@ -47,13 +47,14 @@ public class independencia {
             }
             a++;
         }
+        Double valorE, varianza,estadistico;
+        valorE = (((2*datos)-1)/3.0);
+        varianza = ((16*datos-29)/90.0);
+        estadistico = (aum-valorE)/Math.sqrt(varianza);
+        
         if(nivel == 90){
-            Double valorE, varianza,estadistico;
-            valorE = (((2*datos)-1)/3.0);
-            varianza = ((16*datos-29)/90.0);
-            estadistico = (aum-valorE)/Math.sqrt(varianza);
             if(estadistico <1.635){
-            Primera.indep.setText("Los numeros del conjunto son independientes");
+                Primera.indep.setText("Los numeros del conjunto son independientes");
             }
             else{
                 Primera.indep.setText("Los numeros del conjunto no son independientes");
@@ -62,10 +63,6 @@ public class independencia {
             Primera.valoresp.setText(String.format("%.2f",valorE));
             Primera.resvar.setText(String.format("%.2f",varianza));
         }else if(nivel == 95){
-            Double valorE, varianza,estadistico;
-            valorE = (((2*datos)-1)/3.0);
-            varianza = ((16*datos-29)/90.0);
-            estadistico = (aum-valorE)/Math.sqrt(varianza);
             if(estadistico <1.96){
                 Primera.indep.setText("Los numeros del conjunto son independientes");
             }
@@ -76,17 +73,13 @@ public class independencia {
             Primera.valoresp.setText(String.format("%.2f",valorE));
             Primera.resvar.setText(String.format("%.2f",varianza));    
         }else {
-            Double valorE, varianza,estadistico;
-            valorE = (((2*datos)-1)/3.0);
-            varianza = ((16*datos-29)/90.0);
-            estadistico = (aum-valorE)/Math.sqrt(varianza);
             if(estadistico <2.575){
                 Primera.indep.setText("Los numeros del conjunto son independientes");
             }
             else{
                 Primera.indep.setText("Los numeros del conjunto no son independientes");
             }
-            Primera.indep.setText(String.format("%.2f",estadistico));
+            Primera.estad.setText(String.format("%.2f",estadistico));
             Primera.valoresp.setText(String.format("%.2f",valorE));
             Primera.resvar.setText(String.format("%.2f",varianza));
         }
