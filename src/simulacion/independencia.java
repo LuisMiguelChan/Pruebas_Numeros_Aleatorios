@@ -50,10 +50,10 @@ public class independencia {
         Double valorE, varianza,estadistico;
         valorE = (((2*datos)-1)/3.0);
         varianza = ((16*datos-29)/90.0);
-        estadistico = (aum-valorE)/Math.sqrt(varianza);
+        estadistico = Math.abs((aum-valorE)/Math.sqrt(varianza));
         
         if(nivel == 90){
-            if(estadistico <1.635){
+            if(estadistico < 1.635){
                 Primera.indep.setText("Los numeros del conjunto son independientes");
             }
             else{
@@ -63,7 +63,7 @@ public class independencia {
             Primera.valoresp.setText(String.format("%.2f",valorE));
             Primera.resvar.setText(String.format("%.2f",varianza));
         }else if(nivel == 95){
-            if(estadistico <1.96){
+            if(estadistico < 1.96){
                 Primera.indep.setText("Los numeros del conjunto son independientes");
             }
             else{
@@ -73,7 +73,7 @@ public class independencia {
             Primera.valoresp.setText(String.format("%.2f",valorE));
             Primera.resvar.setText(String.format("%.2f",varianza));    
         }else {
-            if(estadistico <2.575){
+            if(estadistico < 2.575){
                 Primera.indep.setText("Los numeros del conjunto son independientes");
             }
             else{
